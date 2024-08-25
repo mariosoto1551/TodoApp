@@ -1,17 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SideMenuComponent } from '../../components/sideMenu/sideMenu.component';
 
 @Component({
-  selector: 'app-dashboard-layout',
+  selector: 'app-side-menu',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    SideMenuComponent
+    RouterModule
   ],
-  templateUrl: './dashboardLayout.component.html',
+  templateUrl: './sideMenu.component.html',
   styles: `
     :host {
       display: block;
@@ -19,4 +17,4 @@ import { SideMenuComponent } from '../../components/sideMenu/sideMenu.component'
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardLayoutComponent { }
+export class SideMenuComponent { }

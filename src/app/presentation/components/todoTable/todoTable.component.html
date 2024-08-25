@@ -1,0 +1,17 @@
+<table class="w-full border bg-slate-600 rounded-2xl">
+  <thead class="h-10 bg-gray-400 w-full">
+    <th class="border border-r-black w-6/12 rounded-tl-xl">Nombre</th>
+    <th class="border border-x-black w-3/12">Etiquetas</th>
+    <th class="border border-x-black w-1/12">Urgencia</th>
+    <th class="border border-x-black w-1/12">Fecha</th>
+    <th class="border border-l-black w-1/12 rounded-tr-xl">Detalles</th>
+  </thead>
+  <tbody>
+    <tr>
+      @for (item of ['d', 'd', 'd', 'd', 'd']; track $index) {
+        <td class="border bg-slate-400 h-8">{{item}}</td>
+      }
+    </tr>
+
+  </tbody>
+</table>
