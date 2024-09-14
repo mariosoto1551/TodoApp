@@ -1,0 +1,39 @@
+<div class="m-5">
+  <h1 class="text-3xl mb-7">Editar Tarea</h1>
+  <hr />
+  @if (myForm()) {
+    <form [formGroup]="myForm()!" (submit)="updateTask()">
+      <div class="m-2 w-full">
+        <label for="name">
+          @if (myForm()!.controls['name'].invalid) {*}
+          Nombre:
+        </label>
+        <input formControlName="name" required class="ml-6 w-96" type="text" />
+      </div>
+
+      <div class="m-2 w-full">
+        <label>Descripcion: </label>
+        <textarea formControlName="description" class="w-96 p-2"></textarea>
+      </div>
+
+      <div class="m-2 w-full">
+        <label class="mr-11">Fecha: </label>
+        <input formControlName="date" type="date" />
+      </div>
+
+      <div class="m-2 w-full">
+        <label class="mr-5">Etiquetas: </label>
+        <input formControlName="tags" type="text" />
+      </div>
+
+      <div class="m-2 w-full">
+        <label class="mr-5">Urgencia: </label>
+        <input formControlName="urgency" type="range" min="1" max="3" value="1" />
+      </div>
+
+      <button type="submit" class="active p-2 rounded-lg">Actualizar Tarea</button>
+    </form>
+  } @else {
+    <p>Cargando datos de la tarea...</p>
+  }
+</div>

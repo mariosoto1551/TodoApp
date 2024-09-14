@@ -7,10 +7,18 @@
     <th class="border border-l-black w-1/12 rounded-tr-xl">Detalles</th>
   </thead>
   <tbody>
-    <tr>
-      @for (item of ['d', 'd', 'd', 'd', 'd']; track $index) {
-        <td class="border bg-slate-400 h-8">{{item}}</td>
-      }
+    @for (task of taskList(); track $index) {
+      <tr>
+
+          <td class="border bg-slate-400 h-8"><button (click)="deleteTask(task.id!)">&#10006;</button>{{task.name}}</td>
+          <td class="border bg-slate-400 h-8">{{task.tags ?? 'no existe'}}</td>
+          <td class="border bg-slate-400 h-8">{{task.urgency}}</td>
+          <td class="border bg-slate-400 h-8">{{task.date}}</td>
+          <td class="border bg-sky-400 h-8"><button class="active:bg-sky-600 w-full h-full" [routerLink]="['../', 'task', task.id]">ver más</button></td>
+      </tr>
+    }
+    <tr class="row-span-5"><a [routerLink]="['../', 'add-task']">
+      <button class="w-full rounded-b-xl active:bg-blue-500 bg-sky-500 h-8">Add Task</button></a>
     </tr>
 
   </tbody>
